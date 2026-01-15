@@ -2,10 +2,11 @@ package com.quizapp.service;
 
 import com.quizapp.model.QuizQuestion;
 import com.quizapp.repository.QuizRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
-
+@Service
 public class QuizService {
     private final QuizRepository quizRepository;
 

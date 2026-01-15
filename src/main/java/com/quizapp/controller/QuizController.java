@@ -48,14 +48,14 @@ public class QuizController {
             QuizResultDTO quizResultDTO = new QuizResultDTO(score, total);
             return new ResponseEntity<>(quizResultDTO, HttpStatus.OK);
         }catch (Exception e){
-            return new ResponseEntity<>().badRequest().build();
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
 
     @PostMapping("/question")
     public ResponseEntity<String> addQuestionCont(@RequestBody QuizQuestion question){
         try{
-            quizService.addQuestionSer(question)
+            quizService.addQuestionSer(question);
             return new ResponseEntity<>("Question Added Successfullu", HttpStatus.CREATED);
         } catch (IllegalArgumentException e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
