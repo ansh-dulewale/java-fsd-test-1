@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public class QuizService {
-    private QuizRepository quizRepository;
+    private final QuizRepository quizRepository;
 
     public QuizService(QuizRepository quizRepository){
         this.quizRepository  = quizRepository;
